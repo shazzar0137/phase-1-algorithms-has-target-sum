@@ -1,17 +1,46 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seenNumbers = new Set();
+  for (const number of array) {
+    const complement = target - number;
+    if (seenNumbers.has(complement)) {
+      return true;
+    }
+    seenNumbers.add(number);
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  O(n) where n is the length of the input array
+
 */
 
 /* 
   Add your pseudocode here
+  function hasTargetSum(array, target):
+    create an empty set called seenNumbers
+    for each number in array:
+      complement = target - number
+      if complement is in seenNumbers:
+        return true
+      add number to seenNumbers
+    return false
 */
 
 /*
   Add written explanation of your solution here
+  The function `hasTargetSum` takes an array of numbers and a target number as input.
+  It uses a set to keep track of the numbers we have seen so far. For each number in the array,
+  it calculates the complement (the number needed to reach the target when added to the current number).
+  If the complement is already in the set, it means we have found two numbers that add up to the target,
+  and the function returns true. If we finish checking all numbers without finding a pair, we return false.
+  This approach is efficient because checking for membership in a set is O(1) on average,
+  making the overall time complexity O(n), where n is the length of the input array.
+  The space complexity is also O(n) in the worst case, where all numbers are stored in the set.
+  This solution is efficient and works well for large arrays.
+  The function is designed to handle edge cases such as empty arrays or arrays with negative numbers.
 */
 
 // You can run `node index.js` to view these console logs

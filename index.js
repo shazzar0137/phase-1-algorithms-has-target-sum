@@ -30,17 +30,18 @@ function hasTargetSum(array, target) {
 */
 
 /*
-  Add written explanation of your solution here
-  The function `hasTargetSum` takes an array of numbers and a target number as input.
-  It uses a set to keep track of the numbers we have seen so far. For each number in the array,
-  it calculates the complement (the number needed to reach the target when added to the current number).
-  If the complement is already in the set, it means we have found two numbers that add up to the target,
-  and the function returns true. If we finish checking all numbers without finding a pair, we return false.
-  This approach is efficient because checking for membership in a set is O(1) on average,
-  making the overall time complexity O(n), where n is the length of the input array.
-  The space complexity is also O(n) in the worst case, where all numbers are stored in the set.
-  This solution is efficient and works well for large arrays.
-  The function is designed to handle edge cases such as empty arrays or arrays with negative numbers.
+- The `hasTargetSum` function takes an array of numbers and a target number as inputs.
+- It uses a set to store the numbers encountered so far.
+- For each number in the array:
+  - It calculates the complement (the number needed to reach the target when added to the current number).
+  - If the complement is in the set, it means a pair of numbers that add up to the target has been found, and the function returns true.
+  - If the complement is not in the set, the current number is added to the set.
+- If the function iterates through all numbers without finding a pair, it returns false.
+- This approach is efficient because checking for membership in a set is O(1) on average.
+- The overall time complexity is O(n), where n is the length of the input array.
+- The space complexity is O(n) in the worst case, where all numbers are stored in the set.
+- The solution is efficient and works well for large arrays.
+- The function is designed to handle edge cases, such as empty arrays or arrays with negative numbers..
 */
 
 // You can run `node index.js` to view these console logs
